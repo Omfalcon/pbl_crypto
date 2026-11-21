@@ -1,13 +1,17 @@
 import axios from 'axios';
 
-const API_BASE = 'http://127.0.0.1:8000/api';
+// Local development talks directly to FastAPI. In production, Vercel proxies
+// /api/* to the Render backend using frontend/vercel.json.
+const API_BASE =
+  import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.DEV ? 'http://127.0.0.1:8000/api' : '/api');
 
 const client = axios.create({
   baseURL: API_BASE,
   headers: {
     'Content-Type': 'application/json',
   },
-  timeout: 10000,
+  timeout: 30000,
 });
 
 export const api = {
