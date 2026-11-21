@@ -5,7 +5,8 @@ import {
   Inbox,
   KeyRound,
   ShieldAlert,
-  History
+  History,
+  Code2
 } from 'lucide-react';
 
 export const Sidebar = ({ activeTab, onSelectTab, inboxCount = 0 }) => {
@@ -97,6 +98,29 @@ export const Sidebar = ({ activeTab, onSelectTab, inboxCount = 0 }) => {
             );
           })}
         </nav>
+      </div>
+
+      {/* Author / Student Credit Badge */}
+      <div className="pt-4 border-t border-slate-800/60">
+        <div className="p-3 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-cyan-500/30 transition-all duration-200">
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-lg bg-cyan-500/10 border border-cyan-500/25 flex items-center justify-center shrink-0">
+              <Code2 className="w-3.5 h-3.5 text-cyan-400" />
+            </div>
+            <div className="min-w-0 flex-1">
+              <div className="text-[10px] font-mono uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                Made by
+              </div>
+              <div className="text-xs font-semibold text-slate-200 truncate mt-0.5">
+                Om Agarwal
+              </div>
+              <div className="text-[10px] font-mono text-cyan-400 font-medium truncate">
+                B.Tech (AI/ML) • B-13
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </aside>
   );
