@@ -25,6 +25,14 @@ htmlcov/
 # Logs
 *.log
 
+# Databases
+*.db
+*.sqlite3
+
+# Frontend
+node_modules/
+dist/
+
 # OS files
 .DS_Store
 Thumbs.db
